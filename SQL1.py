@@ -3,7 +3,7 @@ import csv
 
 connect = sqlite3.connect("KundeDatabase.db") #kobler til allerede eksesterende database, hvis den ikke finnes vil det lage en ny database.
 cursor = connect.cursor() #cursor er det som henter tabellen og dataen og putter de sammen
-cursor.execute("CREATE TABLE TablelForData (Fornavn, Etternavn, Epost, Mobilnummer, Postnummer);")
+cursor.execute("CREATE TABLE TablelForData (Fornavn, Etternavn, Epost, Mobilnummer, Postnummer, PRIMARY KEY (Mobilnummer));")
 #cursor.execute gjør at vi lager kolonner og gir dem navn slik at dataen som blir importert kan puttes inn riktig.
 
 #Her skal vi lage en type løkke, vi bruker "with" som lar oss handle med filer, lese filer, redigere og lignende. vi legger til "open()" for å åpne filen.
